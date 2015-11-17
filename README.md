@@ -6,6 +6,7 @@ Extend AuthenticationDataSource to obtain the authentication information from th
 ## Example
 
 **Configuration**
+
 auth {
   realm = "www.yourcompany.com"
   username = "admin"
