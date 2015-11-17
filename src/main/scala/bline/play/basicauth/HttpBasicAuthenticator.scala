@@ -20,7 +20,7 @@ trait AuthenticationDataSource {
 
 
 /**
-  * HTTP Basic Authenticator filter based on the original implementation by Dimitry Kudryavtsev
+  * HTTP Basic Authentication filter based on the implementation by Dimitry Kudryavtsev
   * Modified to allow different sources of auth configuration parameters and logging.
   * Extend AuthenticationDataSource to obtain the authentication information
   * from the required source and mix it with HttpBasicAuthenticator filter
