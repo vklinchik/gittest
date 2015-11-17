@@ -1,4 +1,4 @@
-HTTP Basic Authentication filter based on the [original implementation by Dimitry Kudryavtsev](http://www.mentful.com/2014/06/14/basic-authentication-filter-for-play-framework/).
+HTTP Basic Authentication filter based on the [implementation by Dimitry Kudryavtsev](http://www.mentful.com/2014/06/14/basic-authentication-filter-for-play-framework/).
 
 The original implementation has been modified to allow for different sources of authentication parameters and logging.
 Extend AuthenticationDataSource to obtain the authentication information from the required source and mix it with HttpBasicAuthenticator filter.
