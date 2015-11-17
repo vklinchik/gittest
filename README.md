@@ -51,12 +51,10 @@ trait ConfigAuthenticationDataSource extends AuthenticationDataSource {
   //This is needed if you are behind a load balancer or a proxy
   private def getUserIP(request: RequestHeader): String =
     request.headers.get("x-forwarded-for").getOrElse(request.remoteAddress.toString)
-
 }
 
 object AuthenticationFilter extends HttpBasicAuthenticator with ConfigAuthenticationDataSource
 
 object Global extends WithFilters(AuthenticationFilter) {
-
 }
 ```
