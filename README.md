@@ -19,7 +19,7 @@ auth {
 **Global.scala**
 
 ```scala
-import bline.util.play.{HttpBasicAuthenticator, AuthenticationDataSource}
+import bline.play.basicauth.{HttpBasicAuthenticator, AuthenticationDataSource}
 import play.api.Play._
 import play.api.mvc.{WithFilters, RequestHeader}
 import collection.JavaConversions._
