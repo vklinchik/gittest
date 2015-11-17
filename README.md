@@ -5,6 +5,16 @@ Extend AuthenticationDataSource to obtain the authentication information from th
 
 ## Example
 
+**Configuration**
+# HTTP Basic Authentication configuration
+auth {
+  realm = "www.yourcompany.com"
+  username = "admin"
+  password = "GcX?&LL77PW~7D;VJ2LXYZ"
+  required = true
+  excluded = [about.html, contact.html]
+}
+
 ```scala
 import bline.util.play.{HttpBasicAuthenticator, AuthenticationDataSource}
 import play.api.Play._
