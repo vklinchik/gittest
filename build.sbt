@@ -1,6 +1,6 @@
 name := """play-basic-auth"""
 
-version := "0.1"
+version := "0.2"
 organization := "bline"
 
 scalaVersion := "2.11.7"
