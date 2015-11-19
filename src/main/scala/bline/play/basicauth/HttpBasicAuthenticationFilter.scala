@@ -69,8 +69,8 @@ trait HttpBasicAuthenticationFilter extends Filter { this: Authenticator =>
 
     extract(auth).flatMap { s =>
       val decoded = new String(getDecoder.decode(s), "UTF-8")
-      val usernamePassword = decoded.split(":")
-      Try(Some((usernamePassword(0), usernamePassword.splitAt(1)._2.mkString))).getOrElse(None)
+      val userPass = decoded.split(":")
+      Try(Some((userPass(0), userPass.splitAt(1)._2.mkString))).getOrElse(None)
     }
   }
 
