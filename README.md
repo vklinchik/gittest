@@ -36,9 +36,10 @@ trait SampleAuthenticator extends Authenticator {
 
 
 
-DefaultAuthenticationFilter is provided as part of the package and uses configuration as a source.
 
 ## DefaultAuthenticationFilter
+
+DefaultAuthenticationFilter is provided as part of the package and uses configuration as a source.
 
 **Sample Configuration**
 ```
