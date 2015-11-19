@@ -1,4 +1,4 @@
-HTTP Basic Authentication Filter for [playframework](www.playframework.com) enforces access control to web resources.
+HTTP Basic Authentication Filter for [playframework](http://www.playframework.com) enforces access control to web resources.
 
 This implementation allows for different sources of authentication data. 
 Extend Authenticator trait to obtain the authentication information from the specific source and implement custom authorization function;
