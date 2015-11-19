@@ -12,6 +12,9 @@ trait Authenticator {
 
   def realm: String
 
+  /**
+   * Called by HttpBasicAuthenticationFilter to authenticate user
+   */
   def authorized(user: String, pass: String, resource: String): Boolean
 
   /**
