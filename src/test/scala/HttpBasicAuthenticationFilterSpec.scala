@@ -1,6 +1,6 @@
 
 
-import bline.play.basicauth.{HttpBasicAuthenticationFilter, Authenticator}
+import mindriot.play.basicauth.{HttpBasicAuthenticationFilter, Authenticator}
 import org.specs2.mutable._
 import play.api.mvc.{Result, Results, RequestHeader}
 

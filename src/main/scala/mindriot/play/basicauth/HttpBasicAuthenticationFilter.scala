@@ -1,5 +1,4 @@
-package bline.play.basicauth
-
+package mindriot.play.basicauth
 
 import play.api.mvc.{Filter, RequestHeader, Result}
 import play.api.http.HeaderNames.{AUTHORIZATION, WWW_AUTHENTICATE}
