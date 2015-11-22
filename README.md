@@ -60,7 +60,7 @@ supply DefaultAuthenticationFilter as a parameter.
 **Global.scala**
 
 ```scala
-import bline.play.basicauth.DefaultAuthenticationFilter
+import mindriot.play.basicauth.DefaultAuthenticationFilter
 
 object Global extends WithFilters(DefaultAuthenticationFilter) {
 }
