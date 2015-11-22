@@ -1,7 +1,7 @@
 package mindriot.play.basicauth
 
 import play.api.mvc.{Filter, RequestHeader, Result}
-import play.api.http.HeaderNames.{AUTHORIZATION, WWW_AUTHENTICATE}
+import play.api.http.HeaderNames.{AUTHORIZATION, WWW_AUTHENTICATE, X_FORWARDED_FOR}
 import play.api.mvc.Results.Unauthorized
 import scala.concurrent.Future
 import scala.util.Try
@@ -43,7 +43,7 @@ trait HttpBasicAuthenticationFilter extends Filter { this: Authenticator =>
   private[this] lazy val UnauthorizedResult = Future.successful(
     Unauthorized.withHeaders( WWW_AUTHENTICATE -> s"""Basic realm="${realm}"""")
   )
-  private[this] val BasicString = "BASIC "
+  private[this] val BASIC_STRING = "BASIC "
 
   /**
     * Extract authentication string
@@ -52,8 +52,8 @@ trait HttpBasicAuthenticationFilter extends Filter { this: Authenticator =>
     */
   private def extract(auth: String): Option[String] = {
     Try {
-      val s = auth.substring(0, BasicString.length())
-      if (s.toUpperCase != BasicString) throw new IllegalArgumentException("Invalid authentication parameter")
+      val s = auth.substring(0, BASIC_STRING.length()).toUpperCase
+      if (s != BASIC_STRING) throw new IllegalArgumentException("Invalid authentication parameter")
       auth.replaceFirst(s, "")
     }.toOption
   }
@@ -79,7 +79,7 @@ trait HttpBasicAuthenticationFilter extends Filter { this: Authenticator =>
     * @return IP address
     */
   private def getIp(request: RequestHeader): String =
-    request.headers.get("x-forwarded-for").getOrElse(request.remoteAddress.toString)
+    request.headers.get(X_FORWARDED_FOR).getOrElse(request.remoteAddress.toString)
 
 
 
